@@ -1,7 +1,6 @@
 title: 流畅的Python - Python数据模型 (一)
 tags:
   - Fluent Python
-  - ''
 categories: []
 author: zranbo
 date: 2019-05-14 14:03:00
