@@ -1,4 +1,4 @@
-title: 流畅的Python - Python数据模型
+title: 流畅的Python - Python数据模型 (一)
 tags:
   - Fluent Python
   - ''
@@ -8,9 +8,12 @@ date: 2019-05-14 14:03:00
 ---
 <b>Magic Method (Dunder Method)</b>
 
-Python 里面有很多特殊方法，我们管他叫魔术方法(magic method)。之所以特殊，是因为这些方法不同于一般的对象方法的调用方式 (Object.function)，比如对于字符串对象 `s = "Hello"` 不同于其他的一些语言， `s.length()` 或者类似的方法来获得字符串的长度，而是采用 `len(s)` 但其实我们都知道这等价于 `s.__len__()` 是因为 `len()` 在计算一个对象的长度的时候，本身就是因为这个对象实现了 `__len__()` 方法。当然，如果一个对象没有 `__len__()` 方法，那再使用 `len(Object)` 的时候会抛出一个 `TypeError` 告诉你这个对象不包含 `len()`
+Python 里面有很多特殊方法，我们管他叫魔术方法(magic method)。之所以特殊，是因为这些方法不同于一般的对象方法的调用方式 `Object.function`，比如对于获取字符串对象 `s = "Hello"` 的长度,不同于其他一些语言的 `s.length()` 或者类似的方法，Python采用 `len(s)` 这样的形式。
 
-而Python里面这样的特殊方法还有很多，列一个表格说明一下他们
+引自 《Fluent Python》的一段话：
+>首先明确一点，特殊方法的存在是为了被 Python 解释器调用的，你自己并不需要调用它们。也就是说没有 `my_object.__len__()` 这种写法，而应该使用 `len(my_object`)。在执行 `len(my_object)` 的时候，如果 `my_object` 是一个自定义类的对象，那么 Python 会自己去调用其中由你实现的 `__len__` 方法。
+
+而 Python 里面这样的特殊方法还有很多，列一个表格说明一些。
 
 | 类别 | 方法名 |
 | :---: | :--- |
@@ -95,12 +98,12 @@ print(5 in obj)
  `__str__()`的目的是能友好的可读的表达对象。
  
  
- - `[]` 取值&赋值操作
+ - `[]` 取值&赋值&操作
  
  分别是 `__getitem__()` 和 `__setitem__()`
  
 ```python
- class tObject(object):
+class tObject(object):
     def __init__(self):
         self.data = dict()
 
@@ -115,4 +118,4 @@ obj = tObject()
 obj['1'] = 'a'
 print(obj['1'])
 ```
-`__getitem__()` 方法用于返回参数 `key` 所对应的值，这个 `key` 可以是整型数值和切片对象，并且支持负数索引；如果 `key` 不是以上两种类型，就会抛 `TypeError` ；如果索引越界，会抛 `IndexError` ；如果定义的是映射类型，当 `key` 参数不是其对象的键值时，则会抛出 `KeyError`
+`__getitem__()` 方法用于返回参数 `key` 所对应的值，这个 `key` 可以是索引，关键字或切片对象，并且支持负数索引；如果 `key` 不是以上两种类型，就会抛出 `TypeError` ；如果索引越界，会抛 `IndexError` ；如果定义的是映射类型，当 `key` 参数不是其对象的键值时，则会抛出 `KeyError`
