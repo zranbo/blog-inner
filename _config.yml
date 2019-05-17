@@ -86,12 +86,14 @@ pagination_dir: page
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
+plugins: hexo-generate-feed
+
 ## Themes: https://hexo.io/themes/
 theme: next
 
 # Social links
-social:
-  GitHub: https://github.com/zranbo || github
+# social:
+#   GitHub: https://github.com/zranbo || github
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
