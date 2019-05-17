@@ -1,8 +1,10 @@
+---
 title: 流畅的Python - 序列构成的数组 (二)
 author: zranbo
 tags:
   - Fluent Python
 categories: []
+abbrlink: 2e88435f
 date: 2019-05-15 17:01:00
 ---
 <b>序列类型概念</b>

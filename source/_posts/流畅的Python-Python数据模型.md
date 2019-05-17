@@ -1,16 +1,20 @@
+---
 title: 流畅的Python - Python数据模型 (一)
 tags:
   - Fluent Python
 categories: []
 author: zranbo
+abbrlink: 1bbbb445
 date: 2019-05-14 14:03:00
 ---
 <b>Magic Method (Dunder Method)</b>
 
-Python 里面有很多特殊方法，我们管他叫魔术方法(magic method)。之所以特殊，是因为这些方法不同于一般的对象方法的调用方式 `Object.function`，比如对于获取字符串对象 `s = "Hello"` 的长度,不同于其他一些语言的 `s.length()` 或者类似的方法，Python采用 `len(s)` 这样的形式。
+{% note info %} Python 里面有很多特殊方法，我们管他叫魔术方法(magic method)。之所以特殊，是因为这些方法不同于一般的对象方法的调用方式 `Object.function`，比如对于获取字符串对象 `s = "Hello"` 的长度,不同于其他一些语言的 `s.length()` 或者类似的方法，Python采用 `len(s)` 这样的形式。 {% endnote %}
 
-引自 《Fluent Python》的一段话：
->首先明确一点，特殊方法的存在是为了被 Python 解释器调用的，你自己并不需要调用它们。也就是说没有 `my_object.__len__()` 这种写法，而应该使用 `len(my_object`)。在执行 `len(my_object)` 的时候，如果 `my_object` 是一个自定义类的对象，那么 Python 会自己去调用其中由你实现的 `__len__` 方法。
+
+{% blockquote ——Fluent Python %}
+首先明确一点，特殊方法的存在是为了被 Python 解释器调用的，你自己并不需要调用它们。也就是说没有 `my_object.__len__()` 这种写法，而应该使用 `len(my_object`)。在执行 `len(my_object)` 的时候，如果 `my_object` 是一个自定义类的对象，那么 Python 会自己去调用其中由你实现的 `__len__` 方法。
+{% endblockquote %}
 
 而 Python 里面这样的特殊方法还有很多，列一个表格说明一些。
 
