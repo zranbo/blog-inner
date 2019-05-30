@@ -88,6 +88,9 @@ Share images, automate workflows, and more with a free Docker ID:
 For more examples and ideas, visit:
  https://docs.docker.com/get-started/
 ```
+
+我们需要注意的是，`docker run` 命令如果是一个本地不存在的镜像首先会尝试下载，然后运行容器。
+
 `hello-world` 镜像再运行后会输出以上内容，输出以后容器自动停止，停止的容器并不会被删除。我们可以用 `docker ps -a` 命令查看所有的容器。
 
 注意：查看容器的命令 `docker ps` 但此时只能查看当前正在运行的容器，而想要查看所有容器(包含未运行)就需要 `-a` 参数
