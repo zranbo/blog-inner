@@ -100,13 +100,6 @@ search:
   field: post
   content: true
 
-githubEmojis:
-  enable: true
-  className: github-emoji
-  unicode: true
-  styles:
-  localEmojis:
-
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
