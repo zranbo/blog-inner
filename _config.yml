@@ -100,6 +100,16 @@ search:
   field: post
   content: true
 
+recommended_posts:
+  server: https://api.truelaurel.com
+  timeoutInMillis: 10000
+  internalLinks: 3
+  externalLinks: 0
+  fixedNumber: false
+  autoDisplay: true
+  excludePattern: []
+  titleHtml: <h1>推荐文章<span style="font-size:0.45em; color:gray"></span></h1>
+
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
